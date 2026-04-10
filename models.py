@@ -22,4 +22,10 @@ class Inventory(SQLModel, table=True):
     last_updated: str = Field(default_factory=lambda: datetime.utcnow().isoformat())
 
 
+class User(SQLModel, table=True):
+    username: str = Field(primary_key=True)
+    password_hash: str
+
+
 engine = create_engine("sqlite:///warehouse_inventory.db")
+SQLModel.metadata.create_all(engine)

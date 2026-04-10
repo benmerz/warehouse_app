@@ -11,14 +11,42 @@
 		<header class="hero">
 			<p class="eyebrow">Warehouse App</p>
 			<h1>Inventory Database Viewer</h1>
-			<p class="subtitle">View, add, edit, and delete inventory records.</p>
+			<p class="subtitle">View, add, edit, and delete inventory records. Register a user account and log in to get started.</p>
 			<div class="actions">
 				<button id="refresh-btn" type="button">Refresh</button>
 				<span id="status" aria-live="polite">Loading inventory...</span>
 			</div>
 		</header>
 
-		<section class="form-section" aria-label="Add inventory record">
+		<section class="form-section" aria-label="Log in to your account">
+			<h2>Login</h2>
+			<form id="login-form">
+				<div class="form-grid auth-grid">
+					<label>Username<input name="username" autocomplete="username" required></label>
+					<label>Password<input name="password" type="password" autocomplete="current-password" required></label>
+				</div>
+				<div class="form-actions">
+					<button id="login-submit-btn" type="submit">Log In</button>
+					<span id="login-status" aria-live="polite"></span>
+				</div>
+			</form>
+		</section>
+
+		<section class="form-section" aria-label="Register a user account">
+			<h2>Register User</h2>
+			<form id="register-form">
+				<div class="form-grid register-grid">
+					<label>Username<input name="username" autocomplete="username" required></label>
+					<label>Password<input name="password" type="password" autocomplete="new-password" minlength="6" required></label>
+				</div>
+				<div class="form-actions">
+					<button id="register-submit-btn" type="submit">Create Account</button>
+					<span id="register-status" aria-live="polite"></span>
+				</div>
+			</form>
+		</section>
+
+		<section class="form-section hidden" id="inventory-form-section" aria-label="Add inventory record">
 			<h2 id="form-title">Add Record</h2>
 			<form id="add-record-form">
 				<div class="form-grid">
@@ -45,7 +73,7 @@
 			</form>
 		</section>
 
-		<section class="table-section" aria-label="Inventory data">
+		<section class="table-section hidden" id="inventory-table-section" aria-label="Inventory data">
 			<div class="table-wrap">
 				<table id="inventory-table">
 					<thead id="inventory-head"></thead>

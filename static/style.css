@@ -111,6 +111,14 @@ button:hover {
 	gap: 0.7rem;
 }
 
+.auth-grid {
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.register-grid {
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
 label {
 	display: flex;
 	flex-direction: column;
@@ -142,6 +150,16 @@ input:focus {
 }
 
 #form-status {
+	color: var(--muted);
+	font-size: 0.9rem;
+}
+
+#login-status {
+	color: var(--muted);
+	font-size: 0.9rem;
+}
+
+#register-status {
 	color: var(--muted);
 	font-size: 0.9rem;
 }
